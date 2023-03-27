@@ -1,12 +1,9 @@
 const express = require('express');
 const User = require('../models/User');
-var LocalStorage = require('node-localstorage').LocalStorage,
-  localStorage = new LocalStorage('./scratch');
-var store = require('store');
 const router = express.Router();
 const multer = require('multer');
 const upload = multer();
-const uuid = require('uuid');
+
 
 module.exports = () => {
   router.get('/', (request, response) => {
