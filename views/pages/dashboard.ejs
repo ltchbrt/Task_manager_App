@@ -1,0 +1,596 @@
+
+
+<div class="dash-container">
+  <!-- Project -->
+  <!-- Transfer Ownership -->
+  <div class="modal-transfer">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h1>Transfer Ownership<h1>
+        </div>
+      <div class="modal-body">
+        <div class="form-box">
+          <Form  class="modal-form" id="form-transfer" action="/dashboard/transfer" method="post">
+            <div class="modal-input">
+            <label>Name</label>
+            <input type="text" placeholder="Enter name" name="email" value="" id="trans_email"  hidden/>
+            <input type="text" placeholder="Enter name" name="theme" value="" id="trans_theme"  hidden/>
+            <input type="text" placeholder="Enter name" name="link" value="" id="trans_link"  hidden/>
+                <select class="selectname" name="mem_name" id="translist">
+                
+                    
+                </select>
+              </div>
+            <div class="modal-button">
+              <Button variant="primary" type="submit">
+                Save
+              </Button>
+            </div>
+          </Form>
+          <div class="login-button_close">
+            <Button variant="secondary" onclick="Close()">
+              Close
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- add Project -->
+  <div class="modal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h1>Add Group<h1>
+        </div>
+      <div class="modal-body">
+        <div class="form-box">
+          <Form  class="modal-form" action="/dashboard/create" method="post">
+            <div class="modal-input">
+              <label>Name</label>
+              <input type="text" placeholder="Enter name"  name="name" />
+              <input type="text" placeholder="Enter name" name="project" value="" id="theme"  hidden/>
+              </div>
+            <div class="modal-button">
+              <Button variant="primary" type="submit">
+                Save
+              </Button>
+            </div>
+          </Form>
+          <div class="login-button_close">
+            <Button variant="secondary" onclick="Close()">
+              Close
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+   <!-- Edit Project -->
+
+   <div class="modal-project_edit">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h1>Edit Group<h1>
+        </div>
+      <div class="modal-body">
+        <div class="form-box">
+          <Form class="modal-form" id="form-editp" action="/dashboard/edit_project" method="post">
+            <div class="modal-input">
+              <label>Name</label>
+              <input type="text" placeholder="Enter name" id="editproject" value="" name="name"/>
+              <input type="text" placeholder="Enter name" name="edit_project" value="" id="edit_project" hidden/>  
+            </div>
+            <div class="modal-button">
+              <Button variant="primary" type="submit">
+                Save
+              </Button>
+            </div>
+          </Form>
+          <div class="login-button_close">
+            <Button variant="secondary" onclick="Close()">
+              Close
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+   <!-- Delete Project -->
+
+   <div class="modal-project_delete">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h1>Delete Group<h1>
+        </div>
+      <div class="modal-body">
+        <div class="form-box">
+          <Form class="modal-form" id="form-deletep" action="/dashboard/delete_project" method="post">
+            <div class="modal-input_delete">
+              <label>Are you sure you want to Delete</label>
+              <h1 id="deleteproject"></h1>  
+              <input type="text" placeholder="Enter name" name="delete_project" value="" id="delete_project" hidden/>  
+            </div>
+            <div class="modal-button">
+              <Button variant="primary" type="submit">
+                Yes
+              </Button>
+            </div>
+          </Form>
+          <div class="login-button_delete">
+            <Button variant="secondary" onclick="Close()">
+              No
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Theme -->
+  <!-- Add Theme -->
+
+  <div class="modal-theme">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h1>Create Project<h1>
+        </div>
+      <div class="modal-body">
+        <div class="form-box">
+          <Form id="form_theme" class="modal-form" action="/dashboard/theme" method="post">
+            <div class="modal-input">
+              <label>Name</label>
+              <input type="text" placeholder="Enter name" id="name_theme" name="name"/>
+              <input type="text" placeholder="Enter name" name="user" value="" id="user_n" hidden/>
+              </div>
+            <div class="modal-button">
+              <Button variant="primary" type="submit">
+                Save
+              </Button>
+            </div>
+          </Form>
+          <div class="login-button_close">
+            <Button variant="secondary" onclick="Close()">
+              Close
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Theme -->
+
+  <div class="modal-theme_edit">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h1>Edit Project<h1>
+        </div>
+      <div class="modal-body">
+        <div class="form-box">
+          <Form class="modal-form" id="form_editt" action="/dashboard/edit_theme" method="post">
+            <div class="modal-input">
+              <label>Name</label>
+              <input type="text" placeholder="Enter name" id="edit" value="" name="name"/>
+              <input type="text" placeholder="Enter name" name="edit_theme" value="" id="edit_theme" hidden/>  
+            </div>
+            <div class="modal-button">
+              <Button variant="primary" type="submit" onclick="Edit_Theme()">
+                Save
+              </Button>
+            </div>
+          </Form>
+          <div class="login-button_close">
+            <Button variant="secondary" onclick="Close()">
+              Close
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Delete Theme -->
+
+    <div class="modal-theme_delete">
+      <div class="modal-container">
+        <div class="modal-header">
+          <h1>Delete Project<h1>
+          </div>
+        <div class="modal-body">
+          <div class="form-box">
+            <Form class="modal-form" id="form-deletet" action="/dashboard/delete_theme" method="post">
+              <div class="modal-input_delete">
+                <label>Are you sure you want to Delete</label>
+                <h1 id="delete"></h1>  
+                <input type="text" placeholder="Enter name" name="delete_theme" value="" id="delete_theme" hidden/>  
+              </div>
+              <div class="modal-button">
+                <Button variant="primary" type="submit" onclick="Yes()">
+                  Yes
+                </Button>
+              </div>
+            </Form>
+            <div class="login-button_delete">
+              <Button variant="secondary" onclick="Close()">
+                No
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Subproject -->
+  <!-- Add Subproject -->
+
+  <div class="modal-subproject">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h1>Add Task<h1>
+        </div>
+      <div class="modal-body">
+        <div class="form-box">
+          <Form id="form-task" class="modal-form" action="/dashboard/subproject" method="post">
+            <div class="modal-input">
+              <label>Name</label>
+              <input type="text" placeholder="Enter name" id="name_subproject" name="name"/>
+              <input type="text" placeholder="Enter name" name="email" value="" id="sub_email"  hidden/>
+              <input type="text" placeholder="Enter name" name="project" value="" id="subproject"  hidden/>
+              <input type="text" placeholder="Enter name" name="mainproject" value="" id="mainproject"  hidden/>  
+            </div>
+            <div class="modal-button">
+              <Button variant="primary" type="submit">
+                Save
+              </Button>
+            </div>
+          </Form>
+          <div class="login-button_close">
+            <Button variant="secondary" onclick="Close()">
+              Close
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Subproject Edit -->
+  <div class="modal-subproject_edit">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h1>Edit Task<h1>
+        </div>
+      <div class="modal-body">
+        <div class="form-box">
+          <Form  class="modal-form" id="form-edits" action="/dashboard/edit_subproject" method="post">
+            <div class="modal-input">
+              <label>Name</label>
+              <input type="text" placeholder="Enter name" id="editsubproject" value="" name="name"/>
+              <input type="text" placeholder="Enter name" name="edit_subproject" value="" id="edit_subproject" hidden/>
+              <input type="text" placeholder="Enter name" name="sub_mainproject" value="" id="sub_mainproject" hidden/>    
+            </div>
+            <div class="modal-button">
+              <Button variant="primary" type="submit">
+                Save
+              </Button>
+            </div>
+          </Form>
+          <div class="login-button_close">
+            <Button variant="secondary" onclick="Close()">
+              Close
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <!-- Delete Subproject -->
+
+   <div class="modal-subproject_delete">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h1>Delete Task<h1>
+        </div>
+      <div class="modal-body">
+        <div class="form-box">
+          <Form class="modal-form" id="form-deletes" action="/dashboard/delete_subproject" method="post">
+            <div class="modal-input_delete">
+              <label>Are you sure you want to Delete</label>
+              <h1 id="deletesubproject"></h1>  
+              <input type="text" placeholder="Enter name" name="delete_subproject" value="" id="delete_subproject" hidden/>  
+              <input type="text" placeholder="Enter name" name="subdelete_mainproject" value="" id="subdelete_mainproject" hidden/>    
+            </div>
+            <div class="modal-button">
+              <Button variant="primary" type="submit" onclick="DeleteCount()">
+                Yes
+              </Button>
+            </div>
+          </Form>
+          <div class="login-button_delete">
+            <Button variant="secondary" onclick="Close()">
+              No
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+     <!-- Add Member -->
+
+     <div class="modal-member">
+      <div class="modal-container">
+        <div class="modal-header">
+          <h1>Add Member<h1>
+          </div>
+        <div class="modal-body">
+          <div class="form-box">
+            <Form class="modal-form" id="form-addm" action="/dashboard/member" method="post">
+              <div class="modal-input">
+                <label>Name</label>
+                <select class="selectname" name="mem_name" id="memlist">
+                
+                    
+                </select>
+                <input type="text" placeholder="Enter name" name="subproject" value="" id="membersubproject" hidden />
+                <input type="text" placeholder="Enter name" name="project1" value="" id="memberproject" hidden/>
+                <input type="text" placeholder="Enter name" name="mainproject" value="" id="membermainproject" hidden/>  
+              </div>
+              <div class="modal-button">
+                <Button variant="primary" type="submit">
+                  Save
+                </Button>
+              </div>
+            </Form>
+            <div class="login-button_close">
+              <Button variant="secondary" onclick="Close()">
+                Close
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     <!-- Delete Member -->
+
+   <div class="modal-member_delete">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h1>Delete Member<h1>
+        </div>
+      <div class="modal-body">
+        <div class="form-box">
+          <Form class="modal-form" id="form-deletem" action="/dashboard/delete_member" method="post">
+            <div class="modal-input_delete">
+              <label>Are you sure you want to Delete</label>
+              <h1 id="deletemember"></h1>  
+              <input type="text" placeholder="Enter name" name="subproject" value="" id="deletesub" hidden /> 
+              <input type="text" placeholder="Enter name" name="delete_mainproject" value="" id="delete_member_mainproject" hidden /> 
+              <input type="text" placeholder="Enter name" name="delete_member" value="" id="delete_member" hidden/>  
+            </div>
+            <div class="modal-button">
+              <Button variant="primary" type="submit">
+                Yes
+              </Button>
+            </div>
+          </Form>
+          <div class="login-button_delete">
+            <Button variant="secondary" onclick="Close()">
+              No
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+       <!-- Group Chat -->
+
+       <div class="modal-chat">
+        <div class="modal-container_chat">
+         <div class="chat_header">
+          <h1 id="groupname"></h1>
+          <div>
+            <button style="background-color: red; color: white;" onclick="CloseChat()">X</button>
+          </div>
+         </div>
+
+         <div class="chat_message">
+          <form action="/dashboard/chat" id="form-chat" method="post">
+            <input type="text" placeholder="Enter name" name="subproject" value="" id="messagesubproject" hidden />
+                <input type="text" placeholder="Enter name" name="project" value="" id="messageproject" hidden/>
+                <input type="text" placeholder="Enter name" name="mainproject" value="" id="messagemainproject" hidden/>
+                <input type="text" placeholder="Enter name" name="user" value="" id="messageuser" hidden />  
+            <textarea name="content" id="message" cols="30" rows="10"></textarea>
+            <button type="submit" style="background-color: green; color: white;">Create Post</button>
+          </form>
+         </div>
+
+         <div class="chat_dashboard">
+          
+               
+          
+         </div>
+        </div>
+      </div>
+
+
+      <!-- Edit message-->
+
+<div class="modal-chat_edit">
+  <div class="modal-container">
+    <div class="modal-header">
+      <h1>Edit Chat<h1>
+      </div>
+    <div class="modal-body">
+      <div class="form-box">
+        <Form class="modal-form" id="form-chate" action="/dashboard/chat_edit" method="post">
+          <div class="modal-input">
+            <label>Chat</label>
+            <input type="text" placeholder="Enter name" name="content" id="content" value=""/>
+            <input type="text" placeholder="Enter name" name="content_det" value="" id="contentdet"  hidden/> 
+          </div>
+          <div class="modal-button">
+            <Button variant="primary" type="submit">
+              Save
+            </Button>
+          </div>
+        </Form>
+        <div class="login-button_close">
+          <Button variant="secondary" onclick="CloseMessage()">
+            Close
+          </Button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Delete Chat -->
+
+<div class="modal-chat_delete">
+ <div class="modal-container">
+   <div class="modal-header">
+     <h1>Delete Chat<h1>
+     </div>
+   <div class="modal-body">
+     <div class="form-box">
+       <Form class="modal-form" id="form-chatd" action="/dashboard/delete_chat" method="post">
+         <div class="modal-input_delete">
+           <label>Are you sure you want to Delete</label>
+           <h1 id="deletechat"></h1>  
+           <input type="text" placeholder="Enter name" name="delete_chat" value="" id="deletemessage" hidden/>  
+         </div>
+         <div class="modal-button">
+           <Button variant="primary" type="submit">
+             Yes
+           </Button>
+         </div>
+       </Form>
+       <div class="login-button_delete">
+         <Button variant="secondary" onclick="CloseMessage()">
+           No
+         </Button>
+       </div>
+     </div>
+   </div>
+ </div>
+</div>
+
+<!-- Subproject Status Edit -->
+  <div class="modal-status_edit">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h1>Edit Status<h1>
+        </div>
+      <div class="modal-body">
+        <div class="form-box">
+          <Form class="modal-form" id="form-statuse" action="/dashboard/edit_status" method="post">
+            <div class="modal-input">
+              <label>Status</label>
+                <select class="selectname" name="status" id="statuslist">
+                  <option value="Pending">Pending</option>    
+                  <option value="OnProcess">OnProcess</option> 
+                  <option value="Done">Done</option> 
+                </select>
+              <input type="text" placeholder="Enter name" name="edit_status" value="" id="editstatus" hidden/> 
+              <input type="text" placeholder="Enter name" name="edit_statusgroup" value="" id="statusgroup" hidden/>   
+              <input type="text" placeholder="Enter name" name="status_mainproject" value="" id="status_mainproject" hidden/>    
+            </div>
+            <div class="modal-button">
+              <Button variant="primary" type="submit">
+                Save
+              </Button>
+            </div>
+          </Form>
+          <div class="login-button_close">
+            <Button variant="secondary" onclick="Close()">
+              Close
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+   <!-- dashboard -->
+
+  <div class="Dashboard">
+   
+      <div class="logout">
+        <a href="/login" onclick="Logout()">Logout</a>
+      </div>
+    <h1 id="user_log">
+   
+      </h1>
+      <h1 id="user_email">
+   
+      </h1>
+    <hr>
+
+    <div class="Dashboard-btn">
+      <div class="func-btn">
+        <button style="background-color: blue; color: white;" onclick="AddTheme()">+</button> <p>Create Project</p>
+      </div>
+    </div>
+    <hr></hr>
+
+    <div class="dash-item_container">
+      <div class="dash-item">
+        <div class="dash-details" id="theme_data">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dash-template">
+    <div class="dash-title">
+      <h1 id="theme-name"></h1>
+            <button class="btn-new" id="addgroup" onclick="Add()">
+        Add New Group
+      </button>
+    </div>
+
+    <div>
+    
+        <div class="table-header">
+        </div>
+  
+      <Table>
+        <thead>
+          <th>Task</th>
+          <th>Owner</th>
+          <th>Member</th>
+          <th>Status</th>
+          <th>Date Created</th>
+          <th>Conversation</th>
+          <th>Function</th>
+        </thead>
+        
+        <tbody>
+   
+        </tbody>
+      </Table>
+      <div class="CreateTask">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"
+integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script src="/static/js/Onclick.js"></script>
+<script src="/static/js/Function.js"></script>
+

@@ -1,0 +1,53 @@
+<div class="Header">
+  <div>
+    <p class="Service-header">Service</p>
+    <h1 class="Service-name">Task Manager App</h1>
+  </div>
+</div>
+
+<form id="form" method="post" action="/login">
+  <div class="login-container">
+    <h2>Login Form</h2>
+    <div class="login-content">
+      <div class="login-details">
+        <div class="login-input">
+          <label for="email">Email Address</label>
+          <input type="email" name="email" id="email" />
+        </div>
+        <div class="login-input">
+          <label for="password">Password</label>
+          <input type="password" name="password" />
+        </div>
+      </div>
+      <div class="login-button">
+        <button type="submit">Login</button>
+        <button><a href="/signup">Signup</a></button>
+      </div>
+    </div>
+  </div>
+</form>
+
+<script>
+  const formElem = document.getElementById('form');
+  formElem.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    await fetch('/login', {
+      method: 'POST',
+      body: new FormData(formElem),
+    })
+      .then(function (response) {
+        return response.text();
+      })
+      .then(function (text) {
+        if (text == 'success') {
+          localStorage.setItem('user', document.getElementById('email').value);
+          localStorage.setItem('account', document.getElementById('email').value);
+          alert('Successful Login');
+          window.location.replace('/dashboard');
+        } else {
+          alert('Please Check your Email or Password');
+          window.location.reload();
+        }
+      });
+  });
+</script>

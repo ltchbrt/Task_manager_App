@@ -1,1 +1,2 @@
-# Task_manager_App
+# Task-Manager-App
+Training Project
