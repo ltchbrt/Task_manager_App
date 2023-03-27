@@ -24,7 +24,6 @@ test.setCredentials({ refresh_token: REFRESH_TOKEN });
 
 module.exports = () => {
   router.get('/', async (req, res) => {
-    const task = store.get('task');
     res.render('layout', {
       pageTitle: 'Task Manager App',
       template: 'dashboard',
@@ -161,7 +160,6 @@ module.exports = () => {
       const { name, project } = req.body;
       console.log(req.body.name);
       const group = await Project.create({ name, project, email });
-      store.set('name', project);
       res.redirect('/dashboard');
     } catch (e) {
       let msg;
@@ -468,7 +466,7 @@ module.exports = () => {
       console.log(req.body);
       const time = new Date().toLocaleDateString();
       const query = await Message.create({ content, user, time, mainproject, project, subproject });
-      store.set('task', subproject);
+     
       res.redirect('/dashboard');
     } catch (e) {
       let msg;
