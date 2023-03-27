@@ -5,11 +5,9 @@ const DashboardRoute = require('./dashboard');
 const UploadRoute = require('./upload');
 const router = express.Router();
 const app = express();
-const cors = require('cors');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
 
 module.exports = () => {
   router.get('/', (request, response) => {
